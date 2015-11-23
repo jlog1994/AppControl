@@ -1,6 +1,6 @@
 <?php
 @session_start();
-if (@$_SESSION["name"]) {
+if (@$_SESSION["autentificado"] == "admin") {
 	header("Location:index2.php");
 	exit();
 }	
@@ -8,10 +8,10 @@ if (@$_SESSION["name"]) {
 
 <!DOCTYPE html>
 <html> 
-<head> 
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Autentificación</title>
+	<title>Atentificacion</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
@@ -19,35 +19,34 @@ if (@$_SESSION["name"]) {
 	<script src="js/jquery.js"></script>
 	<script src="_assets/js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-</head> 
-<body>
-<div data-role="page"> 
+</head>
+<body> 
+	<div data-role="page"> 
 	<div data-role="header">
-		<h1>Inicio de Session</h1>
+		<h1>Autentificación</h1>
 		<a href="index.php" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
 		<a href="../nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade">Search</a>		
 	</div>	
 	<div data-role="content">
 		 <form name="form1" action="index.php" method="POST">
           <label for="basic"/>Usuario:</label>
-          <input type="text" name="name"  value="" required />
+          <input type="text" name="usuario"  value="" required />
     	  <label for="basic"/>Password:</label>
           <input type="password"  name="password"  value="" required />
 		  <input type="hidden" name="fn" value="20" />
 		  <input type="submit" value="Autentificación" />
-		 </form>	
-		 </div>
+		 </form>	</div>
 		  <?php
-			@$usuario=$_REQUEST['name'];
+			@$usuario=$_REQUEST['usuario'];
 			@$password=md5($_REQUEST['password']);
 			if (isset($usuario)and isset($password)){
     			require('conexion.php');	
-    			$consulta="select * from usuarios where  name='$usuario' and password='$password'";
+    			$consulta="select * from usuarios where  usuario='$usuario' and password='$password'";
     			@$rs=mysql_query($consulta);
     			@$rs=mysql_num_rows($rs); 
     			if($rs>0)
     			{	session_start();
-    				$_SESSION["name"]= $usuario;
+    				$_SESSION["autentificado"]= $usuario;
 					header("Location:index2.php");
 					exit();
 				}else {
@@ -55,10 +54,8 @@ if (@$_SESSION["name"]) {
     			}
 			}		
 		?>
-		<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
-		<p>Sistema de Venta  version Demos<span class="jqm-version"></span></p>
-		<p>Copyright 2015. Instituto Tecnologico de Tlaxiaco</p>
-</div><!-- /footer -->
+	<div data-role="footer">
+	</div>
 </div>
 </body>
 </html>
