@@ -32,9 +32,7 @@ if (@$_SESSION["name"]) {
 	
 	<h1>Autentificación del Usuario</h1>
 		 <form name="form1"  action="index.php" method="POST">
-          <label for="basic"/>Usuario:</label>
           <input type="text" name="name"  value="" required />
-    	  <label for="basic"/>Password:</label>
           <input type="password"  name="password"  value="" required />
 		  <input type="hidden" name="fn" value="20" />
 		  <input type="submit" value="Autentificación" />
