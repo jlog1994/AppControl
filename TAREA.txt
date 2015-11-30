@@ -1,0 +1,5 @@
+#Reporte de Excel
+#ventas
+#Factura en PDF
+#Galeria Dinamica en Forma de Slider
+#Envio de factura via correo electronico(Utilizando Mercury);

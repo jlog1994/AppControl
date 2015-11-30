@@ -9,11 +9,11 @@
 	
 	
 	<h1>Registro Usuario</h1>
-	<form name="formreg" target="cont"action="insertar.php" method="POST">
+	<form name="formreg" target="cont1" action="insertar.php" method="POST">
         <div style="padding:10px 20px;">
           <input type="text" name="name" id="basic"  placeholder="Ingrese su Usuario" value="" required />
-          <input type="email" name="email" id="basic"  placeholder="Ingrese su Correo" value="" required />
-			<input  id="pw" name="password" data-theme="a" type="password"  required >
+          <input type="email" name="email" id="basic"  placeholder="Ingresar Correo" value="" required />
+			<input  id="pw" name="password" data-theme="a" type="password"  placeholder="*******" required >
             <input type="hidden" name="fn" value="12"/>
             <button type="submit" data-theme="b" data-icon="check">Registrarse</button>
         </div>

@@ -6,9 +6,9 @@
 	  $row=mysql_fetch_array($recordset);
       $nom_producto=$row["nom_producto"];
 	  $precio=$row["precio"];
-	   $cantidad=$row["cantidad"];
-	    $rm=$row["ref_marca"];
-	     $rp=$row["ref_proveedor"];
+	  $cantidad=$row["cantidad"];
+	  $rm=$row["ref_marca"];
+	  $rp=$row["ref_proveedor"];
 
 ?>
 <head>
@@ -22,6 +22,8 @@
 </head> 	
 
 	<div data-role="content">
+		<a href="productosL1.php" target="cont" data-role="button" data-icon="back" 
+		data-iconpos="notext" data-theme="b" data-iconpos="left" data-inline="true"></a>
 		<form id="form1" target="cont" action="actualizacion.php" method="post">
 			 <input type="hidden" name="nc" value="<?php echo $nc;?>" />
 		<label for="basic">Nombre producto:</label>
@@ -77,7 +79,8 @@
 	      <input type="hidden" name="fn" value="11">
 		  <input type="submit" name="envio" value="Guardar" data-theme="e">
 		</form>
-				 <form name="eliminar" action="eliminacion.php" method="POST">
+		
+		<form name="eliminar" action="eliminacion.php"  target="cont" method="POST">
 		  <input type="hidden" name="nc" value="<?php echo $nc;?>" />
 		  <input type="hidden" name="fn" value="11" />
 		  <input type="submit" name="envio" value="Eliminar" />

@@ -6,9 +6,13 @@
 	<script src="js/jquery.js"></script>
 	<script src="_assets/js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-</head> 		
+</head> 
+		<a href="home.html" target="cont" data-role="button" data-icon="back" 
+		data-iconpos="notext" data-theme="b" data-iconpos="left" data-inline="true"></a>		
 	<div data-role="content">
+
 		<div class="content-primary">
+
 		<?php 
 		include('conexion.php');
 	  $consulta="select * from productos";
@@ -18,7 +22,7 @@
 	    <?php while ($row=mysql_fetch_array($recordset)){?>
         <li><?php echo '<a target="cont" href="modproductos.php?nc='.$row["id"].'" >';?>
 				<img src="<?php  if($row["foto"]==NULL){echo 'img/logo.png';}
-				else{echo 'mostrarfoto.php?nc='.$row["ncontrol"];}?>" width="50" height="55" />
+				else{echo 'foto.php?nc='.$row["id"];}?>" width="50" height="55" />
 				<h3><?php echo $row["nom_producto"]?></h3>
 				<p><?php echo $row["precio"]?></p>
 				</a><a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">
@@ -27,10 +31,14 @@
 		 <?php } ?>	
 		</ul>		
 		<div data-role="popup" id="purchase" data-theme="d" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
-			<h3>Purchase Album?</h3>
-			<p>Your download will begin immediately on your mobile device when you purchase.</p>
-			<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Buy: $10.99</a>
+			<h3>Desea Agregar una foto?</h3>
+			
+			<p>Cargar un imagen para identificar los productos.</p>
+			<?php while ($row=mysql_fetch_array($recordset)){?>
+			<a href="#" data-role="button" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Agregrar</a>'
+			
 			<a href="index.html" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>	
+		<?php } ?>	
 		</div>
 		
 		</div><!--/content-primary -->		

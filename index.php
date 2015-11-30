@@ -58,10 +58,10 @@ if (@$_SESSION["name"]) {
 	</div><!-- /content -->
 <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
 	  <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
-		<li data-filtertext="demos homepage" data-icon="home"><a href="home2.html" target="cont">Home</a></li>
-		<li data-filtertext="demos homepage" data-icon="user"><a href="user.php" target="cont">Crear cuenta</a></li>
-		<li data-filtertext="demos homepage" data-icon="user"><a href="contacto.php" target="cont">Contacto</a></li>
-		<iframe width="100%" height="600px" src="home2.html" name="cont" frameborder="0" padding="0px" allowfullscreen></iframe>
+		<li data-filtertext="demos homepage" data-icon="home"><a href="home2.html" target="cont1">Home</a></li>
+		<li data-filtertext="demos homepage" data-icon="user"><a href="user.php" target="cont1">Crear cuenta</a></li>
+		<li data-filtertext="demos homepage" data-icon="user"><a href="contacto.php" target="cont1">Contacto</a></li>
+		<iframe width="100%" height="600px" src="home2.html" name="cont1" frameborder="0" padding="0px" allowfullscreen></iframe>
 	 </ul>
 </div><!-- /panel -->
 

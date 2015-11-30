@@ -1,7 +1,7 @@
 <?php require('seguridad.php'); ?>
 
 <?php
-session_start();
+@session_start();
 if (!isset($_SESSION['name']))
   die("No esta autorizado a ingresar.");
 ?>
@@ -42,19 +42,7 @@ if (!isset($_SESSION['name']))
 	<div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
 	   <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
 		<li data-filtertext="demos homepage" data-icon="home"><a href="home.html" target="cont">Home</a></li>
-		 <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
-			<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
-				<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
-				Usuario<span class="ui-collapsible-heading-status"> click to expand contents</span>
-				</a>
-			</h3>
-			<div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
-			<ul>
-				<li data-filtertext="form checkboxradio widget checkbox input checkboxes controlgroups"><a href="user.php" target="cont" data-ajax="false">Agregar</a></li>
-				<li data-filtertext="form checkboxradio widget radio input radio buttons controlgroups"><a href="#" data-ajax="false">usuarios</a></li>
-			</ul>
-			</div>
-		</li>
+
 
 <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
 	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
@@ -66,6 +54,7 @@ if (!isset($_SESSION['name']))
 		<ul>
 			<li data-filtertext="form checkboxradio widget checkbox input checkboxes controlgroups"><a href="producto.php" target="cont"data-ajax="false">Agregar</a></li>
 			<li data-filtertext="form checkboxradio widget radio input radio buttons controlgroups"><a href="productosL1.php" target="cont" data-ajax="false">productos</a></li>
+			<li data-filtertext="form checkboxradio widget radio input radio buttons controlgroups"><a href="busqueda2.php" target="cont" data-ajax="false">Agregar foto</a></li>
 		</ul>
 	</div>
 </li>

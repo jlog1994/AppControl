@@ -142,7 +142,7 @@ case '11': {
 		echo "Error al guardar";
 	}
 	else{
-		header("Location:productos.php");exit();
+		header("Location:productosL1.php");exit();
 	}
 	mysql_close($conexion);
 }break;

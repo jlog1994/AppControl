@@ -9,7 +9,7 @@
 	
 	
 	<h1>Contacto</h1>
-	<form name="formreg" target="cont"action="#" method="POST">
+	<form name="formreg" target="cont1" action="#" method="POST">
         <div style="padding:10px 20px;">
             <h3>Correo:hola@gmail.com</h3>
 			<h4>Telefono:9531278998</h4>
